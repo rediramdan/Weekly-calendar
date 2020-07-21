@@ -25,10 +25,9 @@
 
 ## Screenshot
 <p align="center">
-  <img width="200" src="https://i.ibb.co/Dk66RL5/Screenshot-20200622-180509.png" border=1/>
-  <img width="200" src="https://i.ibb.co/r6ydqVV/Screenshot-20200622-180541.png" border=1/>
-  <img width="200" src="https://i.ibb.co/3c3kK9K/Screenshot-20200622-180628.png" border=1/>
-  <img width="200" src="https://i.ibb.co/NrtfVJ0/Screenshot-20200622-182219.png" border=1/>
+  <img width="200" src="https://i.ibb.co/HV04dHD/Screenshot-20200721-132835.png" border=1/>
+  <img width="200" src="https://i.ibb.co/LvmXfSV/Screenshot-20200721-132808.png" border=1/>
+  <img width="200" src="https://i.ibb.co/vYjbxYR/Screenshot-20200721-132903.png" border=1/>
 </p>
 
 ## Release APK
