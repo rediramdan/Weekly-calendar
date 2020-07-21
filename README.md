@@ -7,7 +7,6 @@
 
 ## Table of Contents
 
-- [What is Circle ?](#what-is-circle-)
 - [Features](#features)
 - [Screenshot](#screenshot)
 - [Release](#release-apk)
@@ -15,13 +14,10 @@
 - [Usage](#usage-for-development)
 - [Contributors](#contributors)
 
-## What is Circle ?
-<b>Circle</b> is an application to share messages and locations in realtime, in Circle we can send messages to friends while monitoring their location.
-
 ## Features
-* Authentication with firebase
-* Monitor your friend's location in realtime
-* Chat with your friends
+* Displays the current day and the next 7 weeks in a scrollable tabview
+* Displays the current time in the time list
+* Display Polyline map with static data
 
 ## Screenshot
 <p align="center">
@@ -31,7 +27,7 @@
 </p>
 
 ## Release APK
-<a href="https://drive.google.com/file/d/1orwlVxVawhQoGPlJBjGpnNj8VL32ei7g/view?usp=sharing">
+<a href="https://drive.google.com/file/d/1oucJnVXVOkvc5qXSrfd1baz0F6iosgR2/view?usp=sharing">
   <img src="https://img.shields.io/badge/Download%20on%20the-Google%20Drive-blue.svg?style=popout&logo=google-drive"/>
 </a>
 
@@ -39,25 +35,11 @@
 * [`yarn`](https://yarnpkg.com/getting-started/install)
 * [`react-native`](https://facebook.github.io/react-native/docs/getting-started)
 * `Google maps API Key` you can get it [here](https://developers.google.com/maps/documentation/javascript/get-api-key)
-* `Config realtime database firebase for WEB` you can get it [here](https://firebase.google.com/)
-#### Example config
-```
-const firebaseConfig = {
-  apiKey: "YOUR_apiKey",
-  authDomain: "YOUR_authDomain",
-  databaseURL: "YOUR_databaseURL",
-  projectId: "YOUR_projectId",
-  storageBucket: "YOUR_storageBucket",
-  messagingSenderId: "YOUR_messagingSenderId",
-  appId: "YOUR_appId",
-  measurementId: "YOUR_measurementId"
-};
 ```
 ## Usage for development
 1. Open your terminal or command prompt
-2. Type `git clone https://github.com/rediramdan/Circle.git`
+2. Type `git clone https://github.com/rediramdan/Weekly-calendar.git`
 3. Open the folder and type `yarn install` for install dependencies
-4. Add your realtime database config to `./src/utils/configFirebase.js`
 5. Add your goole maps API Key on `AndroidManifest.xml`
 ##### Example
   ```
@@ -66,7 +48,6 @@ const firebaseConfig = {
         android:value="YOUR_API_KEY"/>
   ```
 6. Type `yarn run-android` for run this app
-7. done
 
 ## Contributors
   <center>
