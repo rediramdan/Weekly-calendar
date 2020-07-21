@@ -1,75 +1,91 @@
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
 import {Text} from 'native-base';
+import {View, TouchableOpacity, StyleSheet} from 'react-native';
+import {THEME} from '../constants';
 
 const getHour = (val) => {
   if (val > 12 && val < 24) {
-    
     return val - 12 + ' PM';
   }
-
-  if( val === 12){
+  if (val === 12) {
     return val + ' PM';
   }
-
-  if( val === 24){
+  if (val === 24) {
     return 12 + ' AM';
   }
-
+  if (val === 25) {
+    return 1 + ' AM';
+  }
   return val + ' AM';
 };
 
 const Time = ({item, active}) => {
+  const [show, setShow] = React.useState(false);
   const hour = getHour(item.item);
   return (
     <View>
       <TouchableOpacity
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          paddingTop: 30,
+        style={styles.wrapper}
+        onPress={() => {
+          setShow(!show);
         }}>
         <Text
-          style={{
-            fontSize: 12,
-            color: active ? '#4b6cb7' : 'rgba(0,0,0,0.4)',
-            fontWeight: active ? 'bold' : 'normal',
-          }}>
+          style={[
+            styles.hour,
+            {
+              color: active ? THEME.primary : THEME.secondary,
+              fontWeight: active ? 'bold' : 'normal',
+            },
+          ]}>
           {hour}
         </Text>
-        <View
-          style={{
-            height: 1,
-            backgroundColor: 'rgba(0,0,0,0.1)',
-            flex: 1,
-            marginLeft: 10,
-          }}
-        />
+        <View style={styles.line} />
       </TouchableOpacity>
-      {item.item === 1 ? (
-        <View
-          style={{
-            marginLeft: 50,
-            paddingLeft: 10,
-            borderLeftWidth: 4,
-            borderLeftColor: '#4b6cb7',
-            height: 40,
-            justifyContent: 'center',
-            borderBottomColor: 'rgba(0,0,0,0.1)',
-            borderBottomWidth: 1,
-            backgroundColor: 'white',
-            display: 'flex',
-            marginBottom: -20,
-          }}>
-          <Text style={{fontSize: 14, color: 'rgba(0,0,0,0.4)'}}>
-            {item.item} AM - {item.item + 1} AM
+      {show ? (
+        <View style={styles.card}>
+          <Text style={styles.textCard}>
+            {hour} - {getHour(item.item + 1)}
           </Text>
         </View>
       ) : null}
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 30,
+  },
+  hour: {
+    fontSize: 12,
+  },
+  line: {
+    height: 1,
+    backgroundColor: THEME.line,
+    flex: 1,
+    marginLeft: 10,
+  },
+  card: {
+    marginLeft: 50,
+    paddingLeft: 10,
+    borderLeftWidth: 4,
+    borderLeftColor: THEME.primary,
+    height: 40,
+    justifyContent: 'center',
+    borderBottomColor: THEME.line,
+    borderBottomWidth: 1,
+    backgroundColor: THEME.bgPrimary,
+    display: 'flex',
+    marginBottom: -20,
+  },
+  textCard: {
+    fontSize: 14,
+    color: THEME.secondary,
+  },
+});
 
 export default Time;

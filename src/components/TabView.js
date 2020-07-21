@@ -1,51 +1,20 @@
 import React from 'react';
-import {
-  Container,
-  Header,
-  Text,
-  Left,
-  Right,
-  Body,
-  Button,
-  Title,
-  Tabs,
-  Tab,
-  ScrollableTab,
-} from 'native-base';
-import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
-import {View} from 'react-native';
+import {Text, Tabs, Tab, ScrollableTab} from 'native-base';
+import {View, StyleSheet} from 'react-native';
+import {DATE, THEME} from '../constants';
 
 import TimeList from '../components/TimeList';
+
 const getDay = (key) => {
-  const day = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+  const {day} = DATE;
   return day[key];
 };
 
 const getMonth = (key) => {
-  const month = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'Mei',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+  const {month} = DATE;
   return month[key];
 };
+
 const TabView = () => {
   var date = new Date();
   let TabList = [];
@@ -55,31 +24,41 @@ const TabView = () => {
       <Tab
         key={i}
         heading={
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              backgroundColor: '#4b6cb7',
-            }}>
+          <View style={styles.wrapper}>
             <Text>{i === 0 ? 'Today ' : getDay(thisDate.getDay())}</Text>
-            <Text style={{fontSize: 12, marginBottom: 10}}>
+            <Text style={styles.text}>
               {i === 0 ? getDay(date.getDay()) + ', ' : null}{' '}
               {thisDate.getDate()} {getMonth(thisDate.getMonth())}{' '}
-              {i !== 0 ?thisDate.getFullYear():null}
+              {i !== 0 ? thisDate.getFullYear() : null}
             </Text>
           </View>
         }>
-        <TimeList today={i===0} date={date} />
-      </Tab>
+        <TimeList today={i === 0} date={date} />
+      </Tab>,
     );
   }
 
   return (
-    <Tabs renderTabBar={() => <ScrollableTab style={{height: 80}} />}>
+    <Tabs renderTabBar={() => <ScrollableTab style={styles.height} />}>
       {TabList}
     </Tabs>
   );
 };
+
+const styles = StyleSheet.create({
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    backgroundColor: THEME.primary,
+  },
+  text: {
+    fontSize: 12,
+    marginBottom: 10,
+  },
+  height: {
+    height: 80,
+  },
+});
 
 export default TabView;
