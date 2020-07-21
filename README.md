@@ -35,7 +35,7 @@
 * [`yarn`](https://yarnpkg.com/getting-started/install)
 * [`react-native`](https://facebook.github.io/react-native/docs/getting-started)
 * `Google maps API Key` you can get it [here](https://developers.google.com/maps/documentation/javascript/get-api-key)
-```
+
 ## Usage for development
 1. Open your terminal or command prompt
 2. Type `git clone https://github.com/rediramdan/Weekly-calendar.git`
