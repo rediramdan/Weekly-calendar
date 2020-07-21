@@ -11,13 +11,14 @@ const TimeList = ({today, date}) => {
   if (currentHour === 0) {
     currentHour = 24;
   }
+  let start = today ? currentHour : 6;
   React.useEffect(() => {
-    for (let i = currentHour; i <= 24; i++) {
+    for (let i = start; i <= 24; i++) {
       data.push(i);
       if (i === 24) {
         i = 0;
       }
-      if (i === currentHour - 1) {
+      if (i === start - 1) {
         i = 25;
       }
     }
