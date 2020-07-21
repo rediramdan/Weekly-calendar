@@ -21,7 +21,6 @@ const TimeList = ({today, date}) => {
         i = 25;
       }
     }
-    console.log(data);
   });
   return (
     <FlatList
