@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Header, Left, Right, Body, Title} from 'native-base';
-import {StyleSheet} from 'react-native';
 import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
+import {StyleSheet} from 'react-native';
 import {THEME} from '../constants';
 
 import TabView from '../components/TabView';
