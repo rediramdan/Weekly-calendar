@@ -11,6 +11,7 @@ const Home = ({navigation}) => {
   return (
     <Container>
       <Header
+        translucent={false}
         androidStatusBarColor={THEME.primary}
         style={{backgroundColor: THEME.primary}}>
         <Left style={styles.pl}>

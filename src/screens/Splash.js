@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, StatusBar} from 'react-native';
 import {Container, Spinner} from 'native-base';
 import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 import {THEME} from '../constants';
@@ -13,6 +13,12 @@ const Splash = ({navigation}) => {
 
   return (
     <Container style={styles.container}>
+      <StatusBar
+          hidden={false}
+          translucent={true}
+          barStyle="light-content"
+          backgroundColor="transparent"
+        />
       <View style={styles.content}>
         <IconM
           name="camera-timer"
